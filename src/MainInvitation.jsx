@@ -110,7 +110,7 @@ const Guests = () => {
         <div className="d-flex gap-4 flex-wrap justify-center">
           {[
             { id: 1, name: 'Mr. John Doe', dept: 'Mathematics', image: '' },
-            { id: 2, name: 'Mrs. Jane Smith', dept: 'Science', image: '' },
+            { id: 2, name: 'Mrs. Freda', dept: 'Science', image: '' },
             { id: 3, name: 'Mr. David Raj', dept: 'English', image: '' }
           ].map((teacher) => (
             <div key={teacher.id} className="card text-center" style={{ width: '280px' }}>
