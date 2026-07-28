@@ -108,11 +108,24 @@ const Guests = () => {
           <p style={{ color: 'var(--color-text-muted)' }}>{t('specialGuestsSub')}</p>
         </div>
         <div className="d-flex gap-4 flex-wrap justify-center">
-          {[1, 2, 3].map((teacher) => (
-            <div key={teacher} className="card text-center" style={{ width: '280px' }}>
-              <div style={{ width: '120px', height: '120px', borderRadius: '50%', backgroundColor: '#eee', margin: '0 auto 16px', border: '4px solid var(--color-primary)' }}></div>
-              <h4>{t('teacherName')}</h4>
-              <p style={{ fontSize: '14px', color: 'var(--color-text-muted)' }}>{t('department')}</p>
+          {[
+            { id: 1, name: 'Mr. John Doe', dept: 'Mathematics', image: '' },
+            { id: 2, name: 'Mrs. Jane Smith', dept: 'Science', image: '' },
+            { id: 3, name: 'Mr. David Raj', dept: 'English', image: '' }
+          ].map((teacher) => (
+            <div key={teacher.id} className="card text-center" style={{ width: '280px' }}>
+              <div style={{ 
+                width: '120px', height: '120px', borderRadius: '50%', backgroundColor: '#eee', 
+                margin: '0 auto 16px', border: '4px solid var(--color-primary)',
+                overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center'
+              }}>
+                {teacher.image ? (
+                  <img src={teacher.image} alt={teacher.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                ) : (
+                  <span style={{ color: '#999', fontSize: '12px' }}>No Photo</span>
+                )}
+              </div>
+              <h4>{teacher.name}</h4>
             </div>
           ))}
         </div>
