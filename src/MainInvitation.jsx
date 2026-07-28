@@ -412,11 +412,24 @@ END:VCALENDAR`;
                 <button type="button" className="counter-btn" onClick={() => handleChildren(1)}>+</button>
               </div>
             </div>
-            <div style={{ marginTop: '16px', fontSize: '14px', color: 'var(--color-secondary)', fontWeight: 500, backgroundColor: 'rgba(255,255,255,0.05)', padding: '12px', borderRadius: '8px' }}>
-              <p style={{ margin: '0 0 8px' }}>Person: {formData.name || 'Your Name'}</p>
-              <p style={{ margin: '0 0 8px' }}>{t('summaryJoining')}:</p>
-              <p style={{ margin: '0 0 4px', paddingLeft: '16px' }}>Adult: {formData.adults}</p>
-              <p style={{ margin: '0', paddingLeft: '16px' }}>Child: {formData.children}</p>
+            <div style={{ marginTop: '16px', fontSize: '15px', color: 'var(--color-secondary)', fontWeight: 500, backgroundColor: 'rgba(255,255,255,0.05)', padding: '16px', borderRadius: '8px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+              <div style={{ display: 'flex', gap: '8px' }}>
+                <span style={{ opacity: 0.8 }}>Person:</span>
+                <span style={{ color: 'var(--color-primary)' }}>{formData.name || 'Your Name'}</span>
+              </div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <span style={{ opacity: 0.8 }}>{t('summaryJoining')}:</span>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', paddingLeft: '16px', borderLeft: '2px solid rgba(255, 255, 255, 0.1)', marginLeft: '8px', marginTop: '4px' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', maxWidth: '100px' }}>
+                    <span style={{ opacity: 0.8 }}>Adult:</span>
+                    <span style={{ color: 'var(--color-primary)' }}>{formData.adults}</span>
+                  </div>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', maxWidth: '100px' }}>
+                    <span style={{ opacity: 0.8 }}>Child:</span>
+                    <span style={{ color: 'var(--color-primary)' }}>{formData.children}</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
