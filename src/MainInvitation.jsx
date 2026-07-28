@@ -265,7 +265,7 @@ const Registration = () => {
     };
 
     try {
-      const scriptURL = 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL';
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbwYE85dDqB4NLYJ074OWTdsdVqjGnsVVckx2ui9VvR3StmphJDgsRe71SEUAO2RcX4j/exec';
       
       if (scriptURL === 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL') {
         setTimeout(() => {
@@ -273,18 +273,19 @@ const Registration = () => {
           setShowSuccess(true);
         }, 1500);
       } else {
-        const response = await fetch(scriptURL, {
+        await fetch(scriptURL, {
           method: 'POST',
+          mode: 'no-cors',
           body: JSON.stringify(payload),
           headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'text/plain;charset=utf-8'
           }
         });
-        const result = await response.json();
-        if (result.status === 'success') {
-          setSubmitting(false);
-          setShowSuccess(true);
-        }
+        
+        // When using 'no-cors', the response is opaque so we can't read response.json().
+        // If the fetch doesn't throw a network error, we assume it was sent successfully.
+        setSubmitting(false);
+        setShowSuccess(true);
       }
     } catch (error) {
       console.error('Error submitting form:', error);
