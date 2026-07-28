@@ -13,6 +13,13 @@ const WelcomeGate = () => {
       setError(t('fillAllDetails'));
       return;
     }
+
+    const phoneRegex = /^\d{10}$/;
+    if (!phoneRegex.test(formData.phone)) {
+      setError(t('invalidPhone'));
+      return;
+    }
+
     setError('');
     navigate('/home');
   };

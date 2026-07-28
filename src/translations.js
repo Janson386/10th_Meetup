@@ -13,6 +13,7 @@ export const translations = {
     enterPhone: 'Enter your WhatsApp number',
     continueToReunion: 'Continue to Reunion',
     fillAllDetails: 'Please fill in all the details to continue.',
+    invalidPhone: 'Please enter a valid 10-digit phone number.',
     
     // Navbar
     navHome: 'Home',
@@ -140,6 +141,7 @@ export const translations = {
     enterPhone: 'உங்கள் வாட்ஸ்அப் எண்ணை உள்ளிடவும்',
     continueToReunion: 'தொடர்க',
     fillAllDetails: 'தொடர அனைத்து விவரங்களையும் நிரப்பவும்.',
+    invalidPhone: 'தயவுசெய்து சரியான 10 இலக்க தொலைபேசி எண்ணை உள்ளிடவும்.',
     
     // Navbar
     navHome: 'முகப்பு',
@@ -267,6 +269,7 @@ export const translations = {
     enterPhone: 'നിങ്ങളുടെ വാട്ട്സ്ആപ്പ് നമ്പർ നൽകുക',
     continueToReunion: 'തുടരുക',
     fillAllDetails: 'തുടരാൻ എല്ലാ വിവരങ്ങളും പൂരിപ്പിക്കുക.',
+    invalidPhone: 'ദയവായി ശരിയായ 10 അക്ക ഫോൺ നമ്പർ നൽകുക.',
     
     // Navbar
     navHome: 'ഹോം',
