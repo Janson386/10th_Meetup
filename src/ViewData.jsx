@@ -19,6 +19,7 @@ const ViewData = () => {
   const [filterPhotoFrame, setFilterPhotoFrame] = useState('All');
   const [filterFamily, setFilterFamily] = useState('All');
   const [filterPayment, setFilterPayment] = useState('All');
+  const [selectedRow, setSelectedRow] = useState(null);
 
   const navigate = useNavigate();
   const scriptURL = 'https://script.google.com/macros/s/AKfycbx02fgz845sd63keuF3lemNOnk6YlTRqdLaFW__1k2X_XbF4uSUq5BMOuRU3gzwcb4gZA/exec';
@@ -237,17 +238,28 @@ const ViewData = () => {
               <thead>
                 <tr style={{ borderBottom: '2px solid var(--color-primary)', color: 'var(--color-secondary)', backgroundColor: 'rgba(0,0,0,0.2)' }}>
                   {Object.keys(filteredData[0]).map((key, i) => (
-                    <th key={i} style={{ padding: '16px 12px', whiteSpace: 'nowrap' }}>{key}</th>
+                    <th key={i} style={{ padding: '16px 12px', whiteSpace: 'nowrap' }}>{key === 'Timestamp' ? 'Sl. No.' : key}</th>
                   ))}
                   {role === 'admin' && <th style={{ padding: '16px 12px', whiteSpace: 'nowrap', textAlign: 'right' }}>Actions</th>}
                 </tr>
               </thead>
               <tbody>
                 {filteredData.map((row, i) => (
-                  <tr key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.05)', backgroundColor: i % 2 === 0 ? 'transparent' : 'rgba(255,255,255,0.02)' }}>
+                  <tr 
+                    key={i} 
+                    onClick={() => setSelectedRow(i)}
+                    style={{ 
+                      borderBottom: '1px solid rgba(255,255,255,0.05)', 
+                      backgroundColor: selectedRow === i ? 'rgba(255, 255, 255, 0.1)' : (i % 2 === 0 ? 'transparent' : 'rgba(255,255,255,0.02)'),
+                      cursor: 'pointer',
+                      transition: 'background-color 0.2s'
+                    }}
+                  >
                     {Object.entries(row).map(([key, val], j) => (
                       <td key={j} style={{ padding: '12px', whiteSpace: 'nowrap' }}>
-                        {key === 'Payment Status' ? (
+                        {key === 'Timestamp' ? (
+                          i + 1
+                        ) : key === 'Payment Status' ? (
                           <span style={{ 
                             padding: '4px 8px', 
                             borderRadius: '12px', 
