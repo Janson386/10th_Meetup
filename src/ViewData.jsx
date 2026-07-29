@@ -2,12 +2,28 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const ViewData = () => {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [password, setPassword] = useState('');
+  const [passwordError, setPasswordError] = useState('');
+  
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
+  const handlePasswordSubmit = (e) => {
+    e.preventDefault();
+    // Default simple password. The user can change this later if needed.
+    if (password === 'admin123') { 
+      setIsAuthenticated(true);
+    } else {
+      setPasswordError('Incorrect password. Please try again.');
+    }
+  };
+
   useEffect(() => {
+    if (!isAuthenticated) return;
+    
     const fetchData = async () => {
       try {
         const scriptURL = 'https://script.google.com/macros/s/AKfycbx02fgz845sd63keuF3lemNOnk6YlTRqdLaFW__1k2X_XbF4uSUq5BMOuRU3gzwcb4gZA/exec';
@@ -36,7 +52,30 @@ const ViewData = () => {
     };
     
     fetchData();
-  }, []);
+  }, [isAuthenticated]);
+
+  if (!isAuthenticated) {
+    return (
+      <div className="view-data-page" style={{ minHeight: '100vh', backgroundColor: 'var(--color-background)', color: 'var(--color-text-main)', padding: '40px 20px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <div style={{ backgroundColor: 'var(--color-surface)', padding: '32px', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.1)', maxWidth: '400px', width: '100%' }}>
+          <h2 style={{ color: 'var(--color-primary)', marginBottom: '24px', textAlign: 'center' }}>Admin Access</h2>
+          <form onSubmit={handlePasswordSubmit}>
+            <input 
+              type="password" 
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="form-control"
+              placeholder="Enter Password"
+              style={{ marginBottom: '16px', width: '100%' }}
+            />
+            {passwordError && <p style={{ color: '#ff6b6b', fontSize: '14px', marginBottom: '16px', textAlign: 'center' }}>{passwordError}</p>}
+            <button type="submit" className="btn btn-primary" style={{ width: '100%' }}>Login</button>
+            <button type="button" className="btn" style={{ width: '100%', marginTop: '12px', border: '1px solid var(--color-text-muted)' }} onClick={() => navigate('/home')}>Back to Home</button>
+          </form>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="view-data-page" style={{ minHeight: '100vh', backgroundColor: 'var(--color-background)', color: 'var(--color-text-main)', padding: '40px 20px' }}>
@@ -47,7 +86,7 @@ const ViewData = () => {
         </div>
 
         {loading && <p>Loading data...</p>}
-        {error && <p style={{ color: 'red' }}>{error}</p>}
+        {error && <p style={{ color: '#ff6b6b' }}>{error}</p>}
         
         {!loading && !error && data.length === 0 && <p>No registrations found.</p>}
 
