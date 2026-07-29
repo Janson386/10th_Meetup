@@ -108,24 +108,19 @@ const Guests = () => {
           <p style={{ color: 'var(--color-text-muted)' }}>{t('specialGuestsSub')}</p>
         </div>
         <div className="d-flex gap-4 flex-wrap justify-center">
-          {[
-            { id: 1, name: 'Mr. John Doe', dept: 'Mathematics', image: '' },
-            { id: 2, name: 'Mrs. Freda', dept: 'Science', image: '' },
-            { id: 3, name: 'Mr. David Raj', dept: 'English', image: '' }
-          ].map((teacher) => (
-            <div key={teacher.id} className="card text-center" style={{ width: '280px' }}>
+          {[1, 2, 3].map((id) => (
+            <div key={id} className="card text-center" style={{ width: '280px' }}>
               <div style={{ 
                 width: '120px', height: '120px', borderRadius: '50%', backgroundColor: '#eee', 
                 margin: '0 auto 16px', border: '4px solid var(--color-primary)',
                 overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center'
               }}>
-                {teacher.image ? (
-                  <img src={teacher.image} alt={teacher.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                ) : (
-                  <span style={{ color: '#999', fontSize: '12px' }}>No Photo</span>
-                )}
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ width: '64px', height: '64px', color: '#ccc' }}>
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg>
               </div>
-              <h4>{teacher.name}</h4>
+              <h4>{t('teacherName')}</h4>
             </div>
           ))}
         </div>
