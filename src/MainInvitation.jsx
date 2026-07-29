@@ -265,7 +265,7 @@ const Registration = () => {
     };
 
     try {
-      const scriptURL = 'https://script.google.com/macros/s/AKfycbwYE85dDqB4NLYJ074OWTdsdVqjGnsVVckx2ui9VvR3StmphJDgsRe71SEUAO2RcX4j/exec';
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbx02fgz845sd63keuF3lemNOnk6YlTRqdLaFW__1k2X_XbF4uSUq5BMOuRU3gzwcb4gZA/exec';
       
       // Check with Google Apps Script backend if phone exists
       if (scriptURL !== 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL') {
