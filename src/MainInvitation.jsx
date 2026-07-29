@@ -298,19 +298,14 @@ SUMMARY:10th Batch Reunion
 DESCRIPTION:Let's come together and celebrate!
 LOCATION:St. Francis Xavier's High School, Parisakkal
 BEGIN:VALARM
-TRIGGER:-P1W
-ACTION:DISPLAY
-DESCRIPTION:Reminder: 10th Batch Reunion in 1 week!
-END:VALARM
-BEGIN:VALARM
 TRIGGER:-P1D
 ACTION:DISPLAY
 DESCRIPTION:Reminder: 10th Batch Reunion tomorrow!
 END:VALARM
 BEGIN:VALARM
-TRIGGER:-PT2H
+TRIGGER:-PT1H
 ACTION:DISPLAY
-DESCRIPTION:Reminder: 10th Batch Reunion in 2 hours!
+DESCRIPTION:Reminder: 10th Batch Reunion in 1 hour!
 END:VALARM
 END:VEVENT
 END:VCALENDAR`;
