@@ -91,7 +91,6 @@ const WelcomeGate = () => {
             {t('continueToReunion')}
           </button>
         </form>
-        </form>
       </div>
     </div>
   );
