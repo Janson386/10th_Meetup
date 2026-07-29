@@ -250,7 +250,7 @@ const ViewData = () => {
                     onClick={() => setSelectedRow(i)}
                     style={{ 
                       borderBottom: '1px solid rgba(255,255,255,0.05)', 
-                      backgroundColor: selectedRow === i ? 'rgba(255, 255, 255, 0.1)' : (i % 2 === 0 ? 'transparent' : 'rgba(255,255,255,0.02)'),
+                      backgroundColor: selectedRow === i ? 'rgba(241, 196, 15, 0.25)' : (i % 2 === 0 ? 'transparent' : 'rgba(255,255,255,0.02)'),
                       cursor: 'pointer',
                       transition: 'background-color 0.2s'
                     }}
