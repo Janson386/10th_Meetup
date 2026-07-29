@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useAppContext } from './AppContext';
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
   const { t, language, setLanguage } = useAppContext();
@@ -415,7 +416,7 @@ END:VCALENDAR`;
             <div style={{ marginTop: '16px', fontSize: '15px', color: 'var(--color-secondary)', fontWeight: 500, backgroundColor: 'rgba(255,255,255,0.05)', padding: '16px', borderRadius: '8px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
               <div style={{ display: 'flex', gap: '8px' }}>
                 <span style={{ opacity: 0.8 }}>Person:</span>
-                <span style={{ color: 'var(--color-primary)' }}>{formData.name || 'Your Name'}</span>
+                <span style={{ color: 'var(--color-primary)' }}>{formData.name}</span>
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
                 <span style={{ opacity: 0.8 }}>{t('summaryJoining')}:</span>
@@ -521,6 +522,17 @@ const Footer = () => {
 };
 
 const MainInvitation = () => {
+  const { formData } = useAppContext();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!formData.name) {
+      navigate('/');
+    }
+  }, [formData.name, navigate]);
+
+  if (!formData.name) return null;
+
   return (
     <div>
       <Navbar />
