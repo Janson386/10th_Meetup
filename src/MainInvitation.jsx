@@ -168,10 +168,6 @@ const Schedule = () => {
               <h4 style={{ color: 'var(--color-primary)', marginBottom: '16px' }}>9:45 AM - 🎭 {t('parallelActivities')}</h4>
             </div>
             <div className="parallel-events">
-              <div className="timeline-content" style={{ borderTop: '4px solid var(--color-primary)' }}>
-                <h3>🌸 {t('pookalam')}</h3>
-                <p>{t('pookalamDesc')}</p>
-              </div>
               <div className="timeline-content" style={{ borderTop: '4px solid var(--color-secondary)' }}>
                 <h3>🎶 {t('teacherGirlsActivities')}</h3>
                 <p>{t('teacherGirlsActivitiesDesc')}</p>
