@@ -244,6 +244,7 @@ const Registration = () => {
   };
 
   const confirmAndSubmit = async () => {
+    // Local storage check as a quick first line of defense
     const registeredPhones = JSON.parse(localStorage.getItem('registeredPhones') || '[]');
     if (registeredPhones.includes(formData.phone)) {
       alert(t('alreadyRegistered'));
@@ -266,6 +267,21 @@ const Registration = () => {
     try {
       const scriptURL = 'https://script.google.com/macros/s/AKfycbwYE85dDqB4NLYJ074OWTdsdVqjGnsVVckx2ui9VvR3StmphJDgsRe71SEUAO2RcX4j/exec';
       
+      // Check with Google Apps Script backend if phone exists
+      if (scriptURL !== 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL') {
+        try {
+          const checkRes = await fetch(`${scriptURL}?phone=${encodeURIComponent(formData.phone)}`);
+          const checkData = await checkRes.json();
+          if (checkData.registered) {
+            alert(t('alreadyRegistered'));
+            setSubmitting(false);
+            return;
+          }
+        } catch (e) {
+          console.warn("Backend duplicate check failed or not implemented yet.", e);
+        }
+      }
+
       if (scriptURL === 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL') {
         setTimeout(() => {
           registeredPhones.push(formData.phone);
