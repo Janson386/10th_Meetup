@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useAppContext } from './AppContext';
 
 const WelcomeGate = () => {
@@ -88,6 +88,11 @@ const WelcomeGate = () => {
             {t('continueToReunion')}
           </button>
         </form>
+        <div style={{ marginTop: '30px', textAlign: 'center' }}>
+          <Link to="/view-data" style={{ color: 'var(--color-text-muted)', fontSize: '14px', textDecoration: 'none' }}>
+            View Registered Data
+          </Link>
+        </div>
       </div>
     </div>
   );
