@@ -2,12 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const ViewData = () => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(() => localStorage.getItem('adminAuth') === 'true');
   const [password, setPassword] = useState('');
   const [passwordError, setPasswordError] = useState('');
   
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [data, setData] = useState(() => {
+    const cached = localStorage.getItem('reunionData');
+    return cached ? JSON.parse(cached) : [];
+  });
+  const [loading, setLoading] = useState(!localStorage.getItem('reunionData'));
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
@@ -16,6 +19,7 @@ const ViewData = () => {
     // Default simple password. The user can change this later if needed.
     if (password === 'admin123') { 
       setIsAuthenticated(true);
+      localStorage.setItem('adminAuth', 'true');
     } else {
       setPasswordError('Incorrect password. Please try again.');
     }
@@ -40,6 +44,7 @@ const ViewData = () => {
         
         if (Array.isArray(json)) {
           setData(json);
+          localStorage.setItem('reunionData', JSON.stringify(json));
         } else {
           throw new Error('Data format error');
         }
@@ -85,7 +90,16 @@ const ViewData = () => {
           <button className="btn" style={{ border: '1px solid var(--color-text-muted)' }} onClick={() => navigate('/home')}>Back to Home</button>
         </div>
 
-        {loading && <p>Loading data...</p>}
+        {loading && (
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '40px' }}>
+            <div className="spinner"></div>
+            <span style={{ marginLeft: '12px' }}>Fetching latest data...</span>
+          </div>
+        )}
+        
+        {/* If we have cached data but are also loading the fresh data in background */}
+        {!loading && data.length > 0 && <p style={{ fontSize: '12px', color: 'var(--color-text-muted)', textAlign: 'right', marginTop: '-15px' }}>Live updating...</p>}
+        
         {error && <p style={{ color: '#ff6b6b' }}>{error}</p>}
         
         {!loading && !error && data.length === 0 && <p>No registrations found.</p>}
