@@ -124,6 +124,7 @@ export const translations = {
     summaryChildren: 'Child(ren)',
     editDetails: 'Edit Details',
     proceed: 'Confirm & Proceed',
+    alreadyRegistered: 'This phone number is already registered.',
   },
   ta: {
     // Welcome Gate
@@ -250,6 +251,7 @@ export const translations = {
     summaryChildren: 'குழந்தைகள்',
     editDetails: 'விவரங்களை திருத்து',
     proceed: 'உறுதி செய்து தொடரவும்',
+    alreadyRegistered: 'இந்த தொலைபேசி எண் ஏற்கனவே பதிவு செய்யப்பட்டுள்ளது.',
   },
   ml: {
     // Welcome Gate
@@ -376,5 +378,6 @@ export const translations = {
     summaryChildren: 'കുട്ടികൾ',
     editDetails: 'വിവരങ്ങൾ തിരുത്തുക',
     proceed: 'സ്ഥിരീകരിച്ച് തുടരുക',
+    alreadyRegistered: 'ഈ ഫോൺ നമ്പർ ഇതിനകം രജിസ്റ്റർ ചെയ്തിട്ടുണ്ട്.',
   }
 };
