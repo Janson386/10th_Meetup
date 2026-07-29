@@ -462,7 +462,7 @@ END:VCALENDAR`;
             <p style={{ fontSize: '14px', color: 'var(--color-text-muted)' }}>
               {t('passInfo')}
             </p>
-            <div style={{ marginTop: '16px', padding: '16px', backgroundColor: 'var(--color-surface)', border: '1px solid rgba(255, 255, 255, 0.15)', borderRadius: '8px', textAlign: 'left' }}>
+            <div style={{ display: 'none', marginTop: '16px', padding: '16px', backgroundColor: 'var(--color-surface)', border: '1px solid rgba(255, 255, 255, 0.15)', borderRadius: '8px', textAlign: 'left' }}>
               <p style={{ margin: '0 0 8px', fontWeight: '600' }}>{t('paymentDetails')}</p>
               <p style={{ margin: '0 0 4px' }}><strong>{t('paymentPhone')}</strong></p>
               <p style={{ margin: '0 0 8px' }}><strong>{t('paymentUpi')}</strong></p>
