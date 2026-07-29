@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AppProvider } from './AppContext';
 import WelcomeGate from './WelcomeGate';
 import MainInvitation from './MainInvitation';
+import ViewData from './ViewData';
 import './index.css';
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<WelcomeGate />} />
           <Route path="/home" element={<MainInvitation />} />
+          <Route path="/view-data" element={<ViewData />} />
         </Routes>
       </Router>
     </AppProvider>

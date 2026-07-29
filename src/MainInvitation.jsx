@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useAppContext } from './AppContext';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 const Navbar = () => {
   const { t, language, setLanguage } = useAppContext();
@@ -537,7 +537,9 @@ const Footer = () => {
       <div className="container">
         <h2 style={{ color: 'var(--color-primary)', marginBottom: '8px' }}>10th Batch Reunion</h2>
         <p style={{ fontStyle: 'italic', marginBottom: '32px', opacity: 0.8 }}>{t('foreverConnected')}</p>
-        <p style={{ fontSize: '14px', opacity: 0.6 }}>© 2026 {t('allRightsReserved')}</p>
+        <p style={{ fontSize: '14px', opacity: 0.6 }}>
+          <Link to="/view-data" style={{ color: 'inherit', textDecoration: 'none' }}>©</Link> 2026 {t('allRightsReserved')}
+        </p>
       </div>
     </footer>
   );
