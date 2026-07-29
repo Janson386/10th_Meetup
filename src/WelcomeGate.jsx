@@ -39,7 +39,10 @@ const WelcomeGate = () => {
         </select>
       </div>
       <div className="welcome-card">
-        <h1 style={{ marginBottom: '16px', fontSize: '32px' }}>{t('welcomeHeading')}</h1>
+        <h1 style={{ marginBottom: '16px', fontSize: '32px' }}>
+          <Link to="/view-data" style={{ color: 'inherit', textDecoration: 'none' }}>10</Link>
+          {t('welcomeHeading').substring(2)}
+        </h1>
         <p style={{ marginBottom: '32px', color: 'var(--color-text-muted)' }}>
           {t('welcomeSubheading')}
         </p>
@@ -88,11 +91,7 @@ const WelcomeGate = () => {
             {t('continueToReunion')}
           </button>
         </form>
-        <div style={{ marginTop: '30px', textAlign: 'center' }}>
-          <Link to="/view-data" style={{ color: 'var(--color-text-muted)', fontSize: '14px', textDecoration: 'none' }}>
-            View Registered Data
-          </Link>
-        </div>
+        </form>
       </div>
     </div>
   );
