@@ -221,7 +221,7 @@ const Registration = () => {
   const [showSummary, setShowSummary] = useState(false);
 
   const baseFee = 300; // Only main person is charged
-  const totalFee = formData.photoFrame === 'Yes' ? baseFee + 250 : baseFee;
+  const totalFee = baseFee; // Photo frame amount will be decided later
 
   const handleAdults = (val) => {
     const newVal = formData.adults + val;

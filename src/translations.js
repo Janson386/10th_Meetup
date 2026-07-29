@@ -35,7 +35,7 @@ export const translations = {
     // Guests
     specialGuests: 'OUR SPECIAL GUESTS',
     specialGuestsSub: 'The people who guided us, inspired us, and made our journey memorable.',
-    teacherName: 'Teacher Name',
+    teacherName: 'Teacher',
     department: 'Department',
     
     // Schedule
@@ -71,7 +71,7 @@ export const translations = {
     nonVeg: 'Non-Vegetarian',
     onamSpecialNote: '*Onam Special (Ada Pradhaman, Papadam, Banana) will be included for everyone.',
     photoFrameLabel: 'Would you like to receive a special reunion photo frame?',
-    yesFrame: 'Yes, I want a photo frame (₹250)',
+    yesFrame: 'Yes, I want a photo frame (Size & Amount will be updated)',
     noFrame: 'No, thank you',
     nameForFrame: 'Name for Frame',
     address: 'Address',
@@ -161,7 +161,7 @@ export const translations = {
     // Guests
     specialGuests: 'எங்கள் சிறப்பு விருந்தினர்கள்',
     specialGuestsSub: 'எங்களை வழிநடத்தி, ஊக்கமளித்த ஆசிரியர்கள்.',
-    teacherName: 'ஆசிரியர் பெயர்',
+    teacherName: 'ஆசிரியர்',
     department: 'துறை',
     
     // Schedule
@@ -197,7 +197,7 @@ export const translations = {
     nonVeg: 'அசைவம்',
     onamSpecialNote: '*ஓணம் ஸ்பெஷல் (அடை பிரதமன், பப்படம், வாழைப்பழம்) அனைவருக்கும் வழங்கப்படும்.',
     photoFrameLabel: 'உங்களுக்கு சிறப்பு புகைப்பட சட்டம் வேண்டுமா?',
-    yesFrame: 'ஆம், எனக்கு புகைப்பட சட்டம் வேண்டும் (₹250)',
+    yesFrame: 'ஆம், எனக்கு புகைப்பட சட்டம் வேண்டும் (அளவு மற்றும் தொகை புதுப்பிக்கப்படும்)',
     noFrame: 'இல்லை, நன்றி',
     nameForFrame: 'சட்டத்திற்கான பெயர்',
     address: 'முகவரி',
@@ -287,7 +287,7 @@ export const translations = {
     // Guests
     specialGuests: 'നമ്മുടെ പ്രത്യേക അതിഥികൾ',
     specialGuestsSub: 'നമ്മെ നയിച്ച, പ്രചോദിപ്പിച്ച അധ്യാപകർ.',
-    teacherName: 'അധ്യാപകന്റെ പേര്',
+    teacherName: 'അധ്യാപകർ',
     department: 'വകുപ്പ്',
     
     // Schedule
@@ -323,7 +323,7 @@ export const translations = {
     nonVeg: 'നോൺ വെജിറ്റേറിയൻ',
     onamSpecialNote: '*ഓണം സ്പെഷ്യൽ (അട പ്രഥമൻ, പപ്പടം, പഴം) എല്ലാവർക്കും ലഭിക്കുന്നതാണ്.',
     photoFrameLabel: 'നിങ്ങൾക്ക് പ്രത്യേക ഫോട്ടോ ഫ്രെയിം ആവശ്യമുണ്ടോ?',
-    yesFrame: 'അതെ, എനിക്ക് ഒരു ഫോട്ടോ ഫ്രെയിം വേണം (₹250)',
+    yesFrame: 'അതെ, എനിക്ക് ഒരു ഫോട്ടോ ഫ്രെയിം വേണം (വലിപ്പവും തുകയും പിന്നീട് അറിയിക്കും)',
     noFrame: 'വേണ്ട, നന്ദി',
     nameForFrame: 'ഫ്രെയിമിനുള്ള പേര്',
     address: 'വിലാസം',
