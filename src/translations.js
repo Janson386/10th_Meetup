@@ -71,7 +71,7 @@ export const translations = {
     nonVeg: 'Non-Vegetarian',
     onamSpecialNote: '*Onam Special (Ada Pradhaman, Papadam, Banana) will be included for everyone.',
     photoFrameLabel: 'Would you like to receive a special reunion photo frame?',
-    yesFrame: 'Yes, I want a photo frame (Size & Amount will be updated)',
+    yesFrame: 'Yes, I want a photo frame (Size & Amount will be update)',
     noFrame: 'No, thank you',
     nameForFrame: 'Name for Frame',
     address: 'Address',
