@@ -39,7 +39,7 @@ const Hero = () => {
   const { formData, t } = useAppContext();
   
   const calculateTimeLeft = () => {
-    const targetDate = new Date('2026-08-27T08:30:00').getTime();
+    const targetDate = new Date('2026-08-23T08:30:00').getTime();
     const now = new Date().getTime();
     const difference = targetDate - now;
 
