@@ -234,7 +234,7 @@ const ViewData = () => {
         )}
 
         {filteredData.length > 0 && (
-          <div style={{ overflowX: 'auto', backgroundColor: 'var(--color-surface)', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+          <div className="table-container" style={{ overflowX: 'auto', backgroundColor: 'var(--color-surface)', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '14px' }}>
               <thead>
                 <tr style={{ borderBottom: '2px solid var(--color-primary)', color: 'var(--color-secondary)', backgroundColor: 'rgba(0,0,0,0.2)' }}>
