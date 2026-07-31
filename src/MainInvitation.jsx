@@ -248,20 +248,20 @@ const Registration = () => {
     setSubmitting(true);
     
     const formDataObj = new URLSearchParams();
-    formDataObj.append('Name', formData.name || '');
-    formDataObj.append('Gender', formData.gender || '');
-    formDataObj.append('Phone', formData.phone || '');
-    formDataObj.append('Food Preference', formData.foodPreference || '');
-    formDataObj.append('Adults', formData.adults || 0);
-    formDataObj.append('Children', formData.children || 0);
-    formDataObj.append('Total Attendees', (formData.adults + formData.children) || 0);
-    formDataObj.append('Photo Frame', formData.photoFrame || '');
-    formDataObj.append('Frame Name', formData.photoFrameName || '');
-    formDataObj.append('Frame Phone', formData.photoFramePhone || '');
-    formDataObj.append('Frame Address', formData.photoFrameAddress || '');
-    formDataObj.append('Registration Fee', totalFee);
-    formDataObj.append('Payment Status', 'Pending');
-    formDataObj.append('Registration Status', 'Confirmed');
+    formDataObj.append('name', formData.name || '');
+    formDataObj.append('gender', formData.gender || '');
+    formDataObj.append('phone', formData.phone || '');
+    formDataObj.append('foodPref', formData.foodPreference || '');
+    formDataObj.append('adults', formData.adults || 0);
+    formDataObj.append('children', formData.children || 0);
+    formDataObj.append('totalAttendees', (formData.adults + formData.children) || 0);
+    formDataObj.append('photoFrame', formData.photoFrame || '');
+    formDataObj.append('frameName', formData.photoFrameName || '');
+    formDataObj.append('framePhone', formData.photoFramePhone || '');
+    formDataObj.append('frameAddress', formData.photoFrameAddress || '');
+    formDataObj.append('registrationFee', totalFee);
+    formDataObj.append('paymentStatus', 'Pending');
+    formDataObj.append('registrationStatus', 'Confirmed');
 
     try {
       const scriptURL = 'https://script.google.com/macros/s/AKfycbx02fgz845sd63keuF3lemNOnk6YlTRqdLaFW__1k2X_XbF4uSUq5BMOuRU3gzwcb4gZA/exec';
