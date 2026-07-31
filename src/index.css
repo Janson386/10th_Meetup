@@ -435,3 +435,27 @@ select option {
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background-color: white !important;
+    color: black !important;
+  }
+  .view-data-page {
+    padding: 0 !important;
+    background-color: white !important;
+  }
+  table {
+    color: black !important;
+  }
+  th, td {
+    border-color: #ddd !important;
+  }
+  .card, .form-control {
+    background-color: white !important;
+    border: 1px solid #ccc !important;
+  }
+}

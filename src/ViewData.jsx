@@ -169,17 +169,18 @@ const ViewData = () => {
       <div className="container" style={{ maxWidth: '1400px', width: '100%' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px', flexWrap: 'wrap', gap: '16px' }}>
           <h1 style={{ color: 'var(--color-primary)', fontSize: '28px', margin: 0 }}>Registration Data</h1>
-          <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
+          <div className="no-print" style={{ display: 'flex', gap: '12px', alignItems: 'center', flexWrap: 'wrap' }}>
             <span style={{ padding: '8px 16px', backgroundColor: 'rgba(255,255,255,0.1)', borderRadius: '4px', fontSize: '14px' }}>
               Role: <strong>{role === 'admin' ? 'Admin' : 'Viewer'}</strong>
             </span>
             <button className="btn" style={{ border: '1px solid var(--color-text-muted)', padding: '8px 16px' }} onClick={() => { localStorage.removeItem('userRole'); setRole(null); }}>Logout</button>
+            <button className="btn" style={{ border: '1px solid var(--color-text-muted)', padding: '8px 16px' }} onClick={() => window.print()}>Print</button>
             <button className="btn btn-primary" style={{ padding: '8px 16px' }} onClick={() => navigate('/home')}>Back to Home</button>
           </div>
         </div>
         
         {/* Filter Controls */}
-        <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', marginBottom: '24px', backgroundColor: 'var(--color-surface)', padding: '16px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+        <div className="no-print" style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', marginBottom: '24px', backgroundColor: 'var(--color-surface)', padding: '16px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
           <div style={{ flex: '1 1 200px' }}>
             <label style={{ display: 'block', marginBottom: '6px', fontSize: '14px', color: 'var(--color-text-muted)' }}>Food Preference</label>
             <select className="form-control" value={filterFood} onChange={e => setFilterFood(e.target.value)}>
@@ -240,7 +241,7 @@ const ViewData = () => {
                   {Object.keys(filteredData[0]).map((key, i) => (
                     <th key={i} style={{ padding: '16px 12px', whiteSpace: 'nowrap' }}>{key === 'Timestamp' ? 'Sl. No.' : key}</th>
                   ))}
-                  {role === 'admin' && <th style={{ padding: '16px 12px', whiteSpace: 'nowrap', textAlign: 'right' }}>Actions</th>}
+                  {role === 'admin' && <th className="no-print" style={{ padding: '16px 12px', whiteSpace: 'nowrap', textAlign: 'right' }}>Actions</th>}
                 </tr>
               </thead>
               <tbody>
@@ -276,7 +277,7 @@ const ViewData = () => {
                       </td>
                     ))}
                     {role === 'admin' && (
-                      <td style={{ padding: '12px', whiteSpace: 'nowrap', textAlign: 'right' }}>
+                      <td className="no-print" style={{ padding: '12px', whiteSpace: 'nowrap', textAlign: 'right' }}>
                         <div style={{ display: 'flex', gap: '8px', justifyContent: 'flex-end' }}>
                           {row['Payment Status'] === 'Pending' && (
                             <button 
