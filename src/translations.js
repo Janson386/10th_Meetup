@@ -93,7 +93,7 @@ export const translations = {
     processing: 'Processing...',
     
     // Success
-    youAreIn: "You're In",
+    youAreIn: "Hello",
     successMsg1: "We are eagerly waiting to meet you! After 10 long years, let's come together, laugh together, celebrate together, and create memories that will last forever.",
     withLove: 'With love',
     reunionTeam: '10th Batch Reunion Team ❤️',
@@ -220,7 +220,7 @@ export const translations = {
     processing: 'செயல்படுகிறது...',
     
     // Success
-    youAreIn: "நீங்கள் இணைந்துவிட்டீர்கள்",
+    youAreIn: "ஹலோ",
     successMsg1: "உங்களைச் சந்திக்க ஆவலுடன் காத்திருக்கிறோம்! 10 வருடங்களுக்குப் பிறகு, நாம் ஒன்றிணைந்து, புதிய நினைவுகளை உருவாக்குவோம்.",
     withLove: 'அன்புடன்',
     reunionTeam: '10வது பேட்ச் குழு ❤️',
@@ -347,7 +347,7 @@ export const translations = {
     processing: 'പ്രോസസ്സ് ചെയ്യുന്നു...',
     
     // Success
-    youAreIn: "നിങ്ങൾ രജിസ്റ്റർ ചെയ്തു",
+    youAreIn: "ഹലോ",
     successMsg1: "നിങ്ങളെ കാണാൻ ഞങ്ങൾ കാത്തിരിക്കുകയാണ്! 10 വർഷങ്ങൾക്ക് ശേഷം, നമുക്ക് ഒത്തുചേരാം, പുതിയ ഓർമ്മകൾ സൃഷ്ടിക്കാം.",
     withLove: 'സ്നേഹത്തോടെ',
     reunionTeam: '10-ാം ബാച്ച് ടീം ❤️',

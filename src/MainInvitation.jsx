@@ -473,7 +473,7 @@ END:VCALENDAR`;
       {showSuccess && (
         <div style={{ position: 'fixed', inset: 0, backgroundColor: 'rgba(0,0,0,0.8)', zIndex: 1000, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           <div className="card text-center animate-fade-in" style={{ maxWidth: '500px', width: '90%', padding: '40px' }}>
-            <h2 style={{ fontSize: '32px', marginBottom: '16px' }}>🎉 {t('youAreIn')}, {formData.name}!</h2>
+            <h2 style={{ fontSize: '32px', marginBottom: '16px' }}>😊 {t('youAreIn')}, {formData.name}!</h2>
             <p style={{ marginBottom: '24px' }}>
               {t('successMsg1')}
             </p>
