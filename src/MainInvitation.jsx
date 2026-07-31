@@ -247,14 +247,21 @@ const Registration = () => {
     setShowSummary(false);
     setSubmitting(true);
     
-    const payload = {
-      ...formData,
-      timestamp: new Date().toISOString(),
-      totalAttendees: formData.adults + formData.children,
-      registrationFee: totalFee,
-      paymentStatus: 'Pending',
-      registrationStatus: 'Confirmed'
-    };
+    const formDataObj = new FormData();
+    formDataObj.append('Name', formData.name || '');
+    formDataObj.append('Gender', formData.gender || '');
+    formDataObj.append('Phone', formData.phone || '');
+    formDataObj.append('Food Preference', formData.foodPreference || '');
+    formDataObj.append('Adults', formData.adults || 0);
+    formDataObj.append('Children', formData.children || 0);
+    formDataObj.append('Total Attendees', (formData.adults + formData.children) || 0);
+    formDataObj.append('Photo Frame', formData.photoFrame || '');
+    formDataObj.append('Frame Name', formData.photoFrameName || '');
+    formDataObj.append('Frame Phone', formData.photoFramePhone || '');
+    formDataObj.append('Frame Address', formData.photoFrameAddress || '');
+    formDataObj.append('Registration Fee', totalFee);
+    formDataObj.append('Payment Status', 'Pending');
+    formDataObj.append('Registration Status', 'Confirmed');
 
     try {
       const scriptURL = 'https://script.google.com/macros/s/AKfycbx02fgz845sd63keuF3lemNOnk6YlTRqdLaFW__1k2X_XbF4uSUq5BMOuRU3gzwcb4gZA/exec';
@@ -283,10 +290,7 @@ const Registration = () => {
         await fetch(scriptURL, {
           method: 'POST',
           mode: 'no-cors',
-          body: JSON.stringify(payload),
-          headers: {
-            'Content-Type': 'text/plain;charset=utf-8'
-          }
+          body: formDataObj
         });
         
         // If the fetch doesn't throw a network error, we assume it was sent successfully.
