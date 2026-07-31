@@ -247,7 +247,7 @@ const Registration = () => {
     setShowSummary(false);
     setSubmitting(true);
     
-    const formDataObj = new FormData();
+    const formDataObj = new URLSearchParams();
     formDataObj.append('Name', formData.name || '');
     formDataObj.append('Gender', formData.gender || '');
     formDataObj.append('Phone', formData.phone || '');
