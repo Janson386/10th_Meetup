@@ -266,21 +266,6 @@ const Registration = () => {
     try {
       const scriptURL = 'https://script.google.com/macros/s/AKfycbx02fgz845sd63keuF3lemNOnk6YlTRqdLaFW__1k2X_XbF4uSUq5BMOuRU3gzwcb4gZA/exec';
       
-      // Check with Google Apps Script backend if phone exists
-      if (scriptURL !== 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL') {
-        try {
-          const checkRes = await fetch(`${scriptURL}?phone=${encodeURIComponent(formData.phone)}`);
-          const checkData = await checkRes.json();
-          if (checkData.registered) {
-            alert(t('alreadyRegistered'));
-            setSubmitting(false);
-            return;
-          }
-        } catch (e) {
-          console.warn("Backend duplicate check failed or not implemented yet.", e);
-        }
-      }
-
       if (scriptURL === 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL') {
         setTimeout(() => {
           setSubmitting(false);
@@ -293,7 +278,6 @@ const Registration = () => {
           body: formDataObj
         });
         
-        // If the fetch doesn't throw a network error, we assume it was sent successfully.
         setSubmitting(false);
         setShowSuccess(true);
       }
