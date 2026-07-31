@@ -244,14 +244,6 @@ const Registration = () => {
   };
 
   const confirmAndSubmit = async () => {
-    // Local storage check as a quick first line of defense
-    const registeredPhones = JSON.parse(localStorage.getItem('registeredPhones') || '[]');
-    if (registeredPhones.includes(formData.phone)) {
-      alert(t('alreadyRegistered'));
-      setShowSummary(false);
-      return;
-    }
-
     setShowSummary(false);
     setSubmitting(true);
     
@@ -284,8 +276,6 @@ const Registration = () => {
 
       if (scriptURL === 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL') {
         setTimeout(() => {
-          registeredPhones.push(formData.phone);
-          localStorage.setItem('registeredPhones', JSON.stringify(registeredPhones));
           setSubmitting(false);
           setShowSuccess(true);
         }, 1500);
@@ -299,10 +289,7 @@ const Registration = () => {
           }
         });
         
-        // When using 'no-cors', the response is opaque so we can't read response.json().
         // If the fetch doesn't throw a network error, we assume it was sent successfully.
-        registeredPhones.push(formData.phone);
-        localStorage.setItem('registeredPhones', JSON.stringify(registeredPhones));
         setSubmitting(false);
         setShowSuccess(true);
       }
