@@ -239,7 +239,7 @@ const ViewData = () => {
               <thead>
                 <tr style={{ borderBottom: '2px solid var(--color-primary)', color: 'var(--color-secondary)', backgroundColor: 'rgba(0,0,0,0.2)' }}>
                   {Object.keys(filteredData[0]).map((key, i) => (
-                    <th key={i} style={{ padding: '16px 12px', whiteSpace: 'nowrap' }}>{key === 'Timestamp' ? 'Sl. No.' : key}</th>
+                    <th key={i} className={key === 'Frame Address' ? 'wrap-text' : ''} style={{ padding: '16px 12px', whiteSpace: 'nowrap' }}>{key === 'Timestamp' ? 'Sl. No.' : key}</th>
                   ))}
                   {role === 'admin' && <th className="no-print" style={{ padding: '16px 12px', whiteSpace: 'nowrap', textAlign: 'right' }}>Actions</th>}
                 </tr>
@@ -257,7 +257,7 @@ const ViewData = () => {
                     }}
                   >
                     {Object.entries(row).map(([key, val], j) => (
-                      <td key={j} style={{ padding: '12px', whiteSpace: 'nowrap' }}>
+                      <td key={j} className={key === 'Frame Address' ? 'wrap-text' : ''} style={{ padding: '12px', whiteSpace: 'nowrap' }}>
                         {key === 'Timestamp' ? (
                           i + 1
                         ) : key === 'Payment Status' ? (

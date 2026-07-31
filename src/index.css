@@ -464,10 +464,15 @@ select option {
   }
   th, td {
     border: 1px solid #ddd !important;
+    white-space: nowrap !important;
+    font-size: 10px !important;
+    padding: 6px 4px !important;
+  }
+  .wrap-text {
     white-space: normal !important;
-    word-break: break-word !important;
-    font-size: 11px !important;
-    padding: 6px !important;
+    word-break: normal !important;
+    min-width: 150px;
+    max-width: 250px;
   }
   .card, .form-control {
     background-color: white !important;
