@@ -266,6 +266,21 @@ const Registration = () => {
     try {
       const scriptURL = 'https://script.google.com/macros/s/AKfycbx02fgz845sd63keuF3lemNOnk6YlTRqdLaFW__1k2X_XbF4uSUq5BMOuRU3gzwcb4gZA/exec';
       
+      if (scriptURL !== 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL') {
+        try {
+          const dataRes = await fetch(`${scriptURL}?action=getData`);
+          const dataList = await dataRes.json();
+          const alreadyExists = dataList.some(row => String(row.Phone) === String(formData.phone));
+          if (alreadyExists) {
+            alert(t('alreadyRegistered'));
+            setSubmitting(false);
+            return;
+          }
+        } catch (e) {
+          console.warn("Backend duplicate check failed.", e);
+        }
+      }
+
       if (scriptURL === 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL') {
         setTimeout(() => {
           setSubmitting(false);
@@ -477,7 +492,7 @@ END:VCALENDAR`;
                   alert('Share feature not supported on this browser.');
                 }
               }}>{t('shareWithFriends')}</button>
-              <button className="btn" style={{ border: '1px solid var(--color-text-muted)' }} onClick={() => setShowSuccess(false)}>{t('backToHome')}</button>
+              <button className="btn" style={{ border: '1px solid var(--color-text-muted)' }} onClick={() => window.location.href = '/'}>{t('backToHome')}</button>
             </div>
           </div>
         </div>
